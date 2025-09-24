@@ -9,7 +9,7 @@ const options = [
   "Rejoue 🔄",
   "Petit cadeau 🎁",
   "Interaction sociale 👥",
-  "Mini-défi 💡"
+  "Gagner un sticker🤍"
 ];
 
 let startAngle = 0;
