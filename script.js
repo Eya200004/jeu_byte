@@ -4,12 +4,12 @@ const spinBtn = document.getElementById("spin");
 const resultDiv = document.getElementById("result");
 
 const options = [
-  "Accès direct au club 🚀",
+  "Accès direct au club🚀",
   "Merci de postuler",
   "Rejoue 🔄",
   "Petit cadeau 🎁",
   "Interaction sociale 👥",
-  "Essaye encore 🔥"
+  "Mini-défi 💡"
 ];
 
 let startAngle = 0;
@@ -19,8 +19,9 @@ let spinAngle = 0;
 let spinTime = 0;
 let spinTimeTotal = 0;
 
+
 function drawRouletteWheel() {
-  ctx.clearRect(0, 0, 600, 600);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.strokeStyle = "white";
   ctx.lineWidth = 4;
   ctx.font = "bold 22px Poppins";
@@ -37,20 +38,21 @@ function drawRouletteWheel() {
     ctx.fillStyle = "white";
     ctx.translate(300 + Math.cos(angle + arc / 2) * 180,
                   300 + Math.sin(angle + arc / 2) * 180);
-    ctx.rotate(angle + arc / 2);
-    ctx.fillText(options[i], -ctx.measureText(options[i]).width / 2, 10);
+    ctx.rotate(angle + arc / 2 + Math.PI / 2);
+    ctx.fillText(options[i], -ctx.measureText(options[i]).width / 2, 0);
     ctx.restore();
   }
 
-  // Flèche (remontée plus haut)
+  
   ctx.fillStyle = "#eaeff2ff";
   ctx.beginPath();
-  ctx.moveTo(300 - 30, 5);   // position Y réduite
+  ctx.moveTo(300 - 30, 5);   
   ctx.lineTo(300 + 30, 5);
   ctx.lineTo(300, 45);
   ctx.closePath();
   ctx.fill();
 }
+
 
 function rotateWheel() {
   spinTime += 30;
@@ -64,13 +66,19 @@ function rotateWheel() {
   spinTimeout = setTimeout(rotateWheel, 30);
 }
 
+
 function stopRotateWheel() {
   clearTimeout(spinTimeout);
   const degrees = startAngle * 180 / Math.PI + 90;
   const arcd = arc * 180 / Math.PI;
   const index = Math.floor((360 - (degrees % 360)) / arcd);
-  resultDiv.textContent = " Résultat : " + options[index];
+  resultDiv.textContent = " 🎉 Résultat : " + options[index] + " 🎉";
+
+  
+  resultDiv.style.transform = "scale(1.3)";
+  setTimeout(() => { resultDiv.style.transform = "scale(1)"; }, 600);
 }
+
 
 spinBtn.addEventListener("click", () => {
   spinAngle = Math.random() * 10 + 10;
@@ -79,4 +87,8 @@ spinBtn.addEventListener("click", () => {
   rotateWheel();
 });
 
+
 drawRouletteWheel();
+
+const bgMusic = document.getElementById("bgMusic");
+bgMusic.volume = 0.2;
