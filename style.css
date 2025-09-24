@@ -1,0 +1,112 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc); 
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  top: 3%;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  color: #5a189a; 
+  text-shadow: 2px 2px 8px rgba(255,255,255,0.8);
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 0 0 35px rgba(90, 24, 154, 0.4);
+}
+
+button {
+  margin-top: 50px;
+  padding: 15px 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  transform: scale(1.08);
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  text-shadow: 1px 1px 5px rgba(255,255,255,0.7);
+}
+
+.logo {
+  position: absolute;
+  width: 250px; 
+  height: auto;
+}
+
+.logo.top-right {
+  top: 5px;
+  right: 10px;
+}
+
+.logo.bottom-left {
+  bottom: 10px;
+  left: 10px;
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.6rem;  /* taille réduite pour mobile */
+    margin-top: 60px;   /* espace du haut pour éviter chevauchement avec logo */
+    margin-bottom: 15px;
+    line-height: 1.2;   /* meilleure lisibilité */
+  }
+
+  canvas {
+    width: 90% !important;
+    height: auto !important;
+    box-shadow: 0 0 20px rgba(90, 24, 154, 0.4);
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  #result {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 100px; 
+  }
+
+  .logo.top-right {
+    top: 5px;
+    right: 5px;
+  }
+
+  .logo.bottom-left {
+    bottom: 5px;
+    left: 5px;
+  }
+
+  .container {
+    top: 1%;
+  }
+}
