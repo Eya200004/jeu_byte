@@ -2,26 +2,20 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>La Roue du Destin - Byte Brigade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roue du Destin - Byte Brigade</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <img src="logor.png" alt="Logo Byte Brigade" class="logo top-right">
-  <img src="logor.png" alt="Logo Byte Brigade" class="logo bottom-left">
-
-  <div class="stars"></div> 
-
-  <div class="container">
-    <h1>✨ Byte Brigade - La Roue du Destin ✨</h1>
-    <canvas id="wheel" width="600" height="600"></canvas>
-    <button id="spin">Lancer la roue 🚀</button>
-    <div id="result"></div>
-  </div>
-
-  
-  <audio id="bgMusic" src="audio.mp3" loop autoplay></audio>
-
+  <h1>
+    <img src="logor.png" alt="Logo Byte Brigade" class="logo">
+    Roue du Destin - Byte Brigade
+  </h1>
+  <canvas id="wheel" width="600" height="600"></canvas>
+  <button id="spin">Lancer la roue</button>
+  <div id="result"></div>
+  <div class="stars"></div>
   <script src="script.js"></script>
+  <audio id="bgMusic" src="audio.mp3" loop autoplay></audio>
 </body>
 </html>
